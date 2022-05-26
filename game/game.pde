@@ -4,11 +4,11 @@ int p_y = (height / 4)*3 + 80;  //player height -> 80
 int p_height = 80;
 int p_width = 60;
 boolean shiftKey = false;
-int screenNumber = 2;
+int screenNumber = 0;
 
 
 void setup() {
-    frameRate(60);
+    frameRate(30);
     size(1000,700); //set screen config
 }
 

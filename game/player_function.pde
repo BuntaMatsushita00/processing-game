@@ -1,19 +1,17 @@
 
 void checkShiftKey() {
+    textSize(10);
+    text("SHIFT"+str(shiftKey),100,10);
     if (keyPressed) {
         if (key == CODED) {
             if (keyCode == SHIFT) {
-                if (shiftKey == true) {
-                    shiftKey = false;
-                } else {
+                if (shiftKey == false) {
                     shiftKey = true;
-                    text("SHIFT true",100,10);
                 }
+            } else if (keyCode == CONTROL) {
+                shiftKey = false;
             }
         }
-    } else{
-        if (shiftKey == true)
-            text("SHIFT true",100,10);
     }
 }
 

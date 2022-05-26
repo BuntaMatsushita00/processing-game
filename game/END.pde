@@ -13,8 +13,10 @@ void GameOverScreen(){
     if (keyPressed) {
         if (keyCode == ENTER) {
             screenNumber = 1;
+            println("ENTER");
         }else if (keyCode == BACKSPACE) {
             screenNumber = 0;
+            println("BACKSPACE");
         }
     }
 }
