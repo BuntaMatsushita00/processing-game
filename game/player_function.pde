@@ -78,7 +78,7 @@ void p_keyPressed() {
 
 void drawPlayer() {
     //draw player function
-    p_y += 0.3;
+    p_y += 0.7;
     up_count -= 1;
     if (p_y >= ((height / 4) * 3) - p_height){
         p_y = ((height / 4) * 3) - p_height;
