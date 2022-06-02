@@ -22,9 +22,9 @@ void p_keyPressed() {
         if (key == CODED) {
             if (shiftKey == true) {
                 if (keyCode == UP) {
-                    if (up_count <= 0){
-                        up_count += Frame_Rate;
-                        p_y = p_y - 20;
+                    if (up_count <= 0 && p_y == ((height / 4) * 3) - p_height){
+                        up_count += Frame_Rate*2;
+                        p_y = p_y - 30;
                         text("SHIFT UP",10,10);
                     }
                     else {
@@ -47,9 +47,9 @@ void p_keyPressed() {
                 }  
             } else{
                 if (keyCode == UP) {
-                   if (up_count <= 0){
-                        up_count += Frame_Rate;
-                        p_y = p_y - 20;
+                   if (up_count <= 0 && p_y == ((height / 4) * 3) - p_height){
+                        up_count += Frame_Rate*2;
+                        p_y = p_y - 30;
                         text("UP",10,10);
                     }
                     else {
@@ -78,7 +78,7 @@ void p_keyPressed() {
 
 void drawPlayer() {
     //draw player function
-    p_y += 1;
+    p_y += 0.3;
     up_count -= 1;
     if (p_y >= ((height / 4) * 3) - p_height){
         p_y = ((height / 4) * 3) - p_height;
