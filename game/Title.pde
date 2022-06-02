@@ -8,7 +8,9 @@ void Title() {
     text("- - - ENTER TO START - - -",165,500);
     if (keyPressed) {
         if (keyCode == ENTER) {
+            println("press");
             screenNumber = 1;
         }
     }
+
 }
