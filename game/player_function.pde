@@ -88,5 +88,5 @@ void drawPlayer() {
     } else if (p_x < 0){
         p_x = 0;
     }
-    rect(p_x, p_y, p_width, p_height);
+    image(img, p_x, p_y);;
 }
