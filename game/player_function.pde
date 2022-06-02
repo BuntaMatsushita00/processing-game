@@ -24,7 +24,7 @@ void p_keyPressed() {
                 if (keyCode == UP) {
                     if (up_count <= 0 && p_y == ((height / 4) * 3) - p_height){
                         up_count += Frame_Rate*2;
-                        p_y = p_y - 30;
+                        p_y = p_y - 60;
                         text("SHIFT UP",10,10);
                     }
                     else {
@@ -49,7 +49,7 @@ void p_keyPressed() {
                 if (keyCode == UP) {
                    if (up_count <= 0 && p_y == ((height / 4) * 3) - p_height){
                         up_count += Frame_Rate*2;
-                        p_y = p_y - 30;
+                        p_y = p_y - 60;
                         text("UP",10,10);
                     }
                     else {
