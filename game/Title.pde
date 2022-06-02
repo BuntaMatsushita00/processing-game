@@ -5,7 +5,7 @@ void Title() {
     textSize(170);
     text("Title",310,250);
     textSize(50);
-    text("- - - ENTER TO START - - -",165,500);
+    text("- - - CLICK TO START - - -",165,500);
     /*
     if (keyPressed) {
         if (keyCode == ENTER) {
