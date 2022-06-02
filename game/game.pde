@@ -11,6 +11,7 @@ boolean m_click = false;
 
 PImage img;
 
+float m = millis();
 
 void setup() {
     //set screen config
