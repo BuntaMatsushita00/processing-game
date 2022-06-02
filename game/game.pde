@@ -1,8 +1,8 @@
 //set player config
 int p_x = 1;
 float p_y = 0.0;  //player height -> 80
-int p_height = 80;
-int p_width = 60;
+int p_height = 120;
+int p_width = 90;
 boolean shiftKey = false;
 int screenNumber = 1;
 int up_count = 0;
