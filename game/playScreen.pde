@@ -19,7 +19,7 @@ void playScreen(){
 }
 
 
-float limit_time = 5.0;
+float limit_time = 100.0;
 float show_time =0.0;
 void time(){
     show_time = limit_time - ((millisec - start_time)/1000) + 1;

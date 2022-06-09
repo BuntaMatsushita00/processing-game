@@ -1,7 +1,7 @@
 
 void checkShiftKey() {
     textSize(10);
-    text("SHIFT"+str(shiftKey),100,10);
+    text("SHIFT" + str(shiftKey),100,10);
     if (keyPressed) {
         if (key == CODED) {
             if (keyCode == SHIFT) {
@@ -22,9 +22,9 @@ void p_keyPressed() {
         if (key == CODED) {
             if (shiftKey == true) {
                 if (keyCode == UP) {
-                    if (up_count <= 0 && p_y == ((height / 4) * 3) - p_height){
-                        up_count += Frame_Rate*2;
-                        p_y = p_y - 60;
+                    if (up_count <= 0 && p_y == ((height / 4) * 3) - p_height) {
+                        up_count += Frame_Rate * 2;
+                        jump = true;
                         text("SHIFT UP",10,10);
                     }
                     else {
@@ -41,9 +41,9 @@ void p_keyPressed() {
                 }  
             } else{
                 if (keyCode == UP) {
-                   if (up_count <= 0 && p_y == ((height / 4) * 3) - p_height){
-                        up_count += Frame_Rate*2;
-                        p_y = p_y - 60;
+                    if (up_count <= 0 && p_y == ((height / 4) * 3) - p_height) {
+                        up_count += Frame_Rate * 2;
+                        jump = true;
                         text("UP",10,10);
                     }
                     else {
@@ -66,15 +66,21 @@ void p_keyPressed() {
 
 void drawPlayer() {
     //draw player function
-    p_y += 0.7;
+    if (jump && p_y > ((height / 4) * 3) - (1.5 * p_height)) {
+        p_y -= 2.0;
+    } else if (jump && p_y <= ((height / 4) * 3) - (1.5 * p_height)) {
+        jump = false;
+    } else {
+        p_y += 2.0;
+    }
     up_count -= 1;
-    if (p_y >= ((height / 4) * 3) - p_height){
+    if (p_y >= ((height / 4) * 3) - p_height) {
         p_y = ((height / 4) * 3) - p_height;
     }
-    if (p_x >= width - p_width){
+    if (p_x >= width - p_width) {
         p_x = width - p_width;
-    } else if (p_x < 0){
+    } else if (p_x < 0) {
         p_x = 0;
     }
-    image(img, p_x, p_y);;  //draw player
+    image(img, p_x, p_y);  //draw player
 }
