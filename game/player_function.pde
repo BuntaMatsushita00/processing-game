@@ -31,12 +31,6 @@ void p_keyPressed() {
                         text("jump cool time",10,10);
                     }
                 }
-                /*
-                else if (keyCode == DOWN) {
-                    p_y = p_y + 3;
-                    text("SHIFT Down",10,10);
-                }
-                */
                 else if (keyCode == LEFT) {
                     p_x = p_x - 3;
                     text("SHIFT LEFT",10,10);
@@ -56,12 +50,6 @@ void p_keyPressed() {
                         text("jump cool time",10,10);
                     }
                 }
-                /*
-                else if (keyCode == DOWN) {
-                    p_y = p_y + 2;
-                    text("Down",10,10);
-                }
-                */
                 else if (keyCode == LEFT) {
                     p_x = p_x - 2;
                     text("LEFT",10,10);
