@@ -1,4 +1,7 @@
 void playScreen(){
+
+    millisec = millis();
+
     //set background
     background(0, 229, 255);
     fill(150, 17, 26);
@@ -8,20 +11,25 @@ void playScreen(){
     checkShiftKey();
     p_keyPressed();
     fill(255);
+    drawBlock();
     drawPlayer();
     time();
+
+    //println(millisec);
 }
 
 
-float limit_time = 300.0;
+float limit_time = 5.0;
 float show_time =0.0;
 void time(){
-    limit_time = limit_time - (millisec/100);
+    show_time = limit_time - ((millisec - start_time)/1000) + 1;
+    println(show_time);
     textSize(20);
     fill(0);
-    show_time = limit_time;
+    //show_time = limit_time;
     text(int(show_time) ,0,70);
-    if (millisec == (limit_time * 100) + 1){
-        screenNumber = 2;
+    if (show_time <= 0.9){
+        screenNumber = 3;
+        millisec = 0.0;
     } 
 }

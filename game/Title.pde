@@ -1,4 +1,5 @@
 void Title() {
+    mouseClicked();
     background(240);
     fill(0,0,255);
     fill(0);
@@ -10,6 +11,7 @@ void Title() {
         print("click");
         m_click = false;
         screenNumber = 1;
+        start_time = millis();
     }
     
 

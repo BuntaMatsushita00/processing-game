@@ -13,6 +13,7 @@ void GameOverScreen(){
     if (keyPressed) {
         if (keyCode == ENTER) {
             screenNumber = 1;
+            start_time = millis();
             println("ENTER");
         }else if (keyCode == BACKSPACE) {
             screenNumber = 0;
@@ -26,9 +27,9 @@ void ClearScreen(){
     fill(0,0,255);
     fill(0);
     textSize(170);
-    text("CLEAR",310,250);
+    text("CLEAR",260,250);
     textSize(50);
-    text("- - - BACKSPACE TO TITLE - - -",165,500);
+    text("- - - BACKSPACE TO TITLE - - -",150,500);
     if (keyPressed) {
         if (keyCode == BACKSPACE) {
             screenNumber = 0;

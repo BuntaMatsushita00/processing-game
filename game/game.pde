@@ -4,6 +4,8 @@ float p_y = 0.0;  //player height -> 150
 int p_height = 150;
 int p_width = 120;
 boolean shiftKey = false;
+boolean jump = false;
+int HP = 10;
 
 //set screen config
 int screenNumber = 0;
@@ -14,9 +16,15 @@ boolean m_click = false;
 PImage img;
 
 //set time
-float millisec = millis();
+float millisec = 0.0;
+float start_time = 0.0;
 
 //set player screen config
+int block_size = 60;
+int block_style[] = new int[103];   //0 -> Null, 1 -> score block, 2 -> item block 3 -> common block
+int block_x[] = new int[103];
+int block_y[] = new int[103];
+
 
 void setup() {
     //set screen config
@@ -34,7 +42,7 @@ void draw() {
         Title();
     }else if (screenNumber == 1) {
         playScreen();
-        println(p_y);
+        //println(p_y);
     }else if (screenNumber == 2) {
         GameOverScreen();
     }else if (screenNumber == 3) {
@@ -43,7 +51,7 @@ void draw() {
 }
 
 void mouseClicked() {
-  if (!m_click) {
+  if (mousePressed) {
     m_click = true;
   } 
 }
