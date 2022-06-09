@@ -13,7 +13,10 @@ boolean m_click = false;
 
 PImage img;
 
+//set time
 float millisec = millis();
+
+//set player screen config
 
 void setup() {
     //set screen config
@@ -26,8 +29,6 @@ void setup() {
 }
 
 void draw() {
-    
-    
     //select screen
     if (screenNumber == 0){
         Title();
