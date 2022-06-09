@@ -21,9 +21,9 @@ float start_time = 0.0;
 
 //set player screen config
 int block_size = 60;
-int block_style[] = new int[103];   //0 -> Null, 1 -> score block, 2 -> item block 3 -> common block
-int block_x[] = new int[53];
-int block_y[] = new int[53];
+
+ArrayList<Block> block;   //0 -> Null, 1 -> score block, 2 -> item block 3 -> common block
+
 
 
 void setup() {
@@ -34,6 +34,7 @@ void setup() {
     //set player config
     p_y = ((height / 4)*3) - p_height;
     img = loadImage("player.png");  //load player image
+    block = new ArrayList<Block>(); //ヌルぽ対策
 }
 
 void draw() {

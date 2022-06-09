@@ -1,7 +1,7 @@
-void playScreen(){
-
+void playScreen() {
+    
     millisec = millis();
-
+    
     //set background
     background(0, 229, 255);
     fill(150, 17, 26);
@@ -14,21 +14,36 @@ void playScreen(){
     drawBlock();
     drawPlayer();
     time();
-
-    //println(millisec);
+    if (block.size() != 0) {
+        for (int i = 0; i < block.size() - 1; i++) {    
+            block.get(i).block_x --;
+        }
+    }
+    if (frameCount % 120 == 0) {
+        int ramdom = int(random(9));
+        if (ramdom > 2 && ramdom <= 9) {
+            if (ramdom % 2 == 0) {
+                block.add(new Block(width - block_size,(((height / 4) * 3) - p_height), 3));
+            } else {
+                block.add(new Block(width - block_size,(((height / 4) * 3) - (p_height * 2)), 4));
+            }
+        } else if (ramdom )
+    }
+    fill(255, 0 , 0, 128);
+    rect(0, 0, width / 10, height);
 }
 
 
 float limit_time = 100.0;
-float show_time =0.0;
-void time(){
-    show_time = limit_time - ((millisec - start_time)/1000) + 1;
+float show_time = 0.0;
+void time() {
+    show_time = limit_time - ((millisec - start_time) / 1000) + 1;
     println(show_time);
     textSize(20);
     fill(0);
     //show_time = limit_time;
     text(int(show_time) ,0,70);
-    if (show_time <= 0.9){
+    if (show_time <= 0.9) {
         screenNumber = 3;
         millisec = 0.0;
     } 
