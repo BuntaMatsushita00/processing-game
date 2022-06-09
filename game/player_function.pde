@@ -76,5 +76,5 @@ void drawPlayer() {
     } else if (p_x < 0){
         p_x = 0;
     }
-    image(img, p_x, p_y);;
+    image(img, p_x, p_y);;  //draw player
 }

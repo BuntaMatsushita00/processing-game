@@ -4,6 +4,8 @@ float p_y = 0.0;  //player height -> 150
 int p_height = 150;
 int p_width = 120;
 boolean shiftKey = false;
+
+//set screen config
 int screenNumber = 0;
 int up_count = 0;
 int Frame_Rate = 60;
