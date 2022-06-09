@@ -22,7 +22,7 @@ void setup() {
 
     //set player config
     p_y = ((height / 4)*3) - p_height;
-    img = loadImage("player.png");
+    img = loadImage("player.png");  //load player image
 }
 
 void draw() {
