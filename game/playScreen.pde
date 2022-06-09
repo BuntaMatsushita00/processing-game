@@ -16,9 +16,12 @@ void playScreen(){
 float limit_time = 500.0;
 float show_time =0.0;
 void time(){
-    limit_time = limit_time - (m/100);
+    limit_time = limit_time - (millisec/100);
     textSize(20);
     fill(0);
     show_time = limit_time;
     text(int(show_time) ,0,70);
+    if (millisec == (limit_time * 100) + 1){
+        screenNumber = 2;
+    } 
 }
