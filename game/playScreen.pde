@@ -14,21 +14,7 @@ void playScreen() {
     drawBlock();
     drawPlayer();
     time();
-    if (block.size() != 0) {
-        for (int i = 0; i < block.size() - 1; i++) {    
-            block.get(i).block_x --;
-        }
-    }
-    if (frameCount % 120 == 0) {
-        int ramdom = int(random(9));
-        if (ramdom > 2 && ramdom <= 9) {
-            if (ramdom % 2 == 0) {
-                block.add(new Block(width - block_size,(((height / 4) * 3) - p_height), 3));
-            } else {
-                block.add(new Block(width - block_size,(((height / 4) * 3) - (p_height * 2)), 4));
-            }
-        } else if (ramdom )
-    }
+    makeBlock();
     fill(255, 0 , 0, 128);
     rect(0, 0, width / 10, height);
 }
