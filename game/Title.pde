@@ -12,6 +12,7 @@ void Title() {
         m_click = false;
         screenNumber = 1;
         start_time = millis();
+        block.clear();
     }
     
 

@@ -22,7 +22,7 @@ void p_keyPressed() {
         if (key == CODED) {
             if (shiftKey == true) {
                 if (keyCode == UP) {
-                    if (up_count <= 0 && p_y == ((height / 4) * 3) - p_height) {
+                    if (up_count <= 0 && p_y > ((height / 4) * 3) - (p_height * 2.5)) {
                         up_count += Frame_Rate * 2;
                         jump = true;
                         text("SHIFT UP",10,10);
@@ -41,7 +41,7 @@ void p_keyPressed() {
                 }  
             } else{
                 if (keyCode == UP) {
-                    if (up_count <= 0 && p_y == ((height / 4) * 3) - p_height) {
+                    if (up_count <= 0 && p_y > ((height / 4) * 3) - (p_height * 2.5)) {
                         up_count += Frame_Rate * 2;
                         jump = true;
                         text("UP",10,10);
@@ -66,14 +66,16 @@ void p_keyPressed() {
 
 void drawPlayer() {
     //draw player function
-    if (jump && p_y > ((height / 4) * 3) - (2 * p_height)) {
+    if (jump && p_y < ((height / 4) * 3) - (2.2 * p_height) && p_y > ((height / 4) * 3) - (3 * p_height) ){
         p_y -= 4.0;
-    } else if (jump && p_y <= ((height / 4) * 3) - (2 * p_height)) {
+    } else if (jump && p_y > ((height / 4) * 3) - (2.1 * p_height)) {
+        p_y -= 4.0;
+    } else if (jump && p_y <= ((height / 4) * 3)) {
         jump = false;
-    } else {
+    } else if (down){
         p_y += 4.0;
     }
-    up_count -= 1;
+    up_count -= 2;
     if (p_y >= ((height / 4) * 3) - p_height) {
         p_y = ((height / 4) * 3) - p_height;
     }
@@ -83,4 +85,6 @@ void drawPlayer() {
         p_x = 0;
     }
     image(img, p_x, p_y);  //draw player
+    fill(0,255,0, 128);
+    rect(p_x, p_y,120,150);
 }

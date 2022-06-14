@@ -6,6 +6,8 @@ int p_width = 120;
 boolean shiftKey = false;
 boolean jump = false;
 int HP = 10;
+int score = 0;
+boolean down = true;
 
 //set screen config
 int screenNumber = 0;
@@ -14,6 +16,8 @@ int Frame_Rate = 60;
 boolean m_click = false;
 
 PImage img;
+PImage ebi;
+PImage kinoko;
 
 //set time
 float millisec = 0.0;
@@ -22,7 +26,7 @@ float start_time = 0.0;
 //set player screen config
 int block_size = 60;
 
-ArrayList<Block> block;   //0 -> Null, 1 -> score block, 2 -> item block 3 -> common block
+ArrayList<Block> block;   //0 -> Null, 1 -> score block, 2 -> item block, 3 -> common block
 
 
 
@@ -34,6 +38,8 @@ void setup() {
     //set player config
     p_y = ((height / 4)*3) - p_height;
     img = loadImage("player.png");  //load player image
+    ebi = loadImage("ebi.png");
+    kinoko = loadImage("kinoko.png");
     block = new ArrayList<Block>(); //ヌルぽ対策
 }
 

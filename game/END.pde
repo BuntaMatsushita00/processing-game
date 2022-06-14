@@ -23,16 +23,18 @@ void GameOverScreen(){
 }
 
 void ClearScreen(){
+    mouseClicked();
     background(240);
     fill(0,0,255);
     fill(0);
     textSize(170);
     text("CLEAR",260,250);
     textSize(50);
-    text("- - - BACKSPACE TO TITLE - - -",150,500);
-    if (keyPressed) {
-        if (keyCode == BACKSPACE) {
-            screenNumber = 0;
-        }
+    text("- - - CLICK TO TITLE - - -",150,500);
+    if(m_click){
+        print("click");
+        m_click = false;
+        screenNumber = 0;
+        start_time = millis();
     }
 }
