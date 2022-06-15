@@ -1,15 +1,15 @@
-void GameOverScreen(){
+void GameOverScreen() {
     background(0);
     fill(255, 0, 0);
-    line(width/2, 0, width/2, height);
-
+    line(width / 2, 0, width / 2, height);
+    
     fill(255,0,0);
     textSize(130);
     text("GAME OVER",115,250);
     fill(255);
-
+    
     textSize(50);
-    text("score:" + str(score), 380 ,400 );
+    text("score:" + str(score), 380 ,400);
     text("- - - ENTER TO CONTINUE - - -",115,500);
     text("- - - BACKSPACE TO TITLE - - -",115,600);
     if (keyPressed) {
@@ -20,14 +20,14 @@ void GameOverScreen(){
             start_time = millis();
             block.clear();
             println("ENTER");
-        }else if (keyCode == BACKSPACE) {
+        } else if (keyCode == BACKSPACE) {
             screenNumber = 0;
             println("BACKSPACE");
         }
     }
 }
 
-void ClearScreen(){
+void ClearScreen() {
     mouseClicked();
     background(240);
     fill(0,0,255);
@@ -36,7 +36,7 @@ void ClearScreen(){
     text("CLEAR",260,250);
     textSize(50);
     text("- - - CLICK TO TITLE - - -",150,500);
-    if(m_click){
+    if (m_click) {
         print("click");
         m_click = false;
         screenNumber = 0;

@@ -1,5 +1,6 @@
 
 void checkShiftKey() {
+    /////shift入力があるか判定
     textSize(10);
     text("SHIFT" + str(shiftKey),100,10);
     if (keyPressed) {
@@ -16,7 +17,7 @@ void checkShiftKey() {
 }
 
 void p_keyPressed() {
-    //player's function
+    ////操作関係
     fill(0);
     if (keyPressed) {
         if (key == CODED) {
@@ -67,17 +68,20 @@ void p_keyPressed() {
 
 
 void drawPlayer() {
-    //draw player function
-    if (jump && p_y < ((height / 4) * 3) - (2.2 * p_height) && p_y > ((height / 4) * 3) - (3 * p_height) ){
+    ////プレイヤーを描画する
+    ///重力関係
+    if (jump && p_y < ((height / 4) * 3) - (2.2 * p_height) && p_y > ((height / 4) * 3) - (3 * p_height)) {
         p_y -= 4.0;
     } else if (jump && p_y > ((height / 4) * 3) - (2.1 * p_height)) {
         p_y -= 4.0;
     } else if (jump && p_y <= ((height / 4) * 3)) {
         jump = false;
-    } else if (down){
+    } else if (down) {
         p_y += 4.0;
     }
-    up_count -= 2;
+    
+    up_count -= 2; //ジャンプ制限時間管理
+    
     if (p_y >= ((height / 4) * 3) - p_height) {
         p_y = ((height / 4) * 3) - p_height;
     }
@@ -86,12 +90,12 @@ void drawPlayer() {
     } else if (p_x < 0) {
         p_x = 0;
     }
-    image(img, p_x, p_y);  //draw player
-    fill(0,255,0, 128);
-    rect(p_x, p_y,120,150);
+    
+    image(img, p_x, p_y);  //描画
 }
 
 void damege() {
+    ////ダメージゾーンの処理
     if (p_x < width / 10 && frameCount % 80 == 0) {
         damegeSound.play();
         HP -= 1;

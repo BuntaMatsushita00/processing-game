@@ -43,19 +43,19 @@ void setup() {
     //set screen config
     frameRate(Frame_Rate);
     size(1000,700); 
-
+    
     //set player config
-    p_y = ((height / 4)*3) - p_height;
-
+    p_y = ((height / 4) * 3) - p_height;
+    
     //load player image
     titleImage = loadImage("title.png");
     img = loadImage("player.png");  
     ebi = loadImage("ebi.png");
     kinoko = loadImage("kinoko.png");
     star = loadImage("star.png");
-
+    
     block = new ArrayList<Block>(); //ヌルぽ対策
-
+    
     clickSound = new SoundFile(this, "click.mp3");
     jumpSound = new SoundFile(this, "jump.mp3");
     kinokoSound = new SoundFile(this, "kinoko.mp3");
@@ -64,20 +64,20 @@ void setup() {
 
 void draw() {
     //select screen
-    if (screenNumber == 0){
+    if (screenNumber == 0) {
         Title();
-    }else if (screenNumber == 1) {
+    } else if (screenNumber == 1) {
         playScreen();
         //println(p_y);
-    }else if (screenNumber == 2) {
+    } else if (screenNumber == 2) {
         GameOverScreen();
-    }else if (screenNumber == 3) {
+    } else if (screenNumber == 3) {
         ClearScreen();
     }
 }
 
 void mouseClicked() {
-  if (mousePressed) {
-    m_click = true;
-  } 
-}
+    if (mousePressed) {
+        m_click = true;
+    } 
+    }

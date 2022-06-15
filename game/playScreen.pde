@@ -1,17 +1,17 @@
 void playScreen() {
-    
+    //時間を取得　1/1000
     millisec = millis();
     
     
 
-    //set background
+    //背景の設定
     background(0, 229, 255);
     fill(251,231,172);
     rect(0,(height / 4) * 3, width, height / 4);
     fill(200);
     rect(0, 0, width / 10, ((height / 4) * 3));
     
-    //draw player
+    //プレイヤーを描画する関係
     checkShiftKey();
     p_keyPressed();
     fill(255);
@@ -21,9 +21,14 @@ void playScreen() {
     Score();
     makeBlock();
 
+    //ダメージゾーン
     fill(255, 0 , 0, 130);
     rect(0, 0, width / 10, ((height / 4) * 3));
+
+    //ブロックとの接触判定
     blockHitCheck();
+
+    //描画系　関数たち
     HPdraw();
     damege();
     if (HP == 0) {
@@ -35,6 +40,7 @@ void playScreen() {
 float limit_time = 100.0;
 float show_time = 0.0;
 void time() {
+    //時間を管理
     show_time = limit_time - ((millisec - start_time) / 1000) + 1;
     textSize(20);
     fill(0);
@@ -47,12 +53,14 @@ void time() {
 }
 
 void Score(){
+    //スコアの表示
     String tmp = "score:" + str(score);
     textSize(20);
     text(tmp, 900, 40);
 }
 
 void HPdraw(){
+    //HPの表示
     textSize(30);
     text("HP",(width/4)*2 - 40, 27);
     rect((width/4)*2, 0, 202, 32);
