@@ -9,6 +9,7 @@ void Title() {
     text("- - - CLICK TO START - - -",165,500);
     if(m_click){
         print("click");
+        clickSound.play();
         m_click = false;
         screenNumber = 1;
         start_time = millis();

@@ -21,9 +21,10 @@ void playScreen() {
     fill(255, 0 , 0, 130);
     rect(0, 0, width / 10, ((height / 4) * 3));
     blockHitCheck();
-
+    HPdraw();
+    damege();
     if (HP == 0) {
-        screenNumber = 2
+        screenNumber = 2;
     }
 }
 
@@ -46,4 +47,12 @@ void Score(){
     String tmp = "score:" + str(score);
     textSize(20);
     text(tmp, 900, 40);
+}
+
+void HPdraw(){
+    textSize(30);
+    text("HP",(width/4)*2 - 40, 27);
+    rect((width/4)*2, 0, 202, 32);
+    fill(255,20,147);
+    rect((width/4)*2 + 1, 1, HP * 20 + 1, 30);
 }

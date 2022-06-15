@@ -7,7 +7,9 @@ void GameOverScreen(){
     textSize(130);
     text("GAME OVER",115,250);
     fill(255);
+
     textSize(50);
+    text("score:" + str(score), 400 ,400 );
     text("- - - ENTER TO CONTINUE - - -",115,500);
     text("- - - BACKSPACE TO TITLE - - -",115,600);
     if (keyPressed) {

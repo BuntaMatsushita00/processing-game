@@ -1,9 +1,8 @@
 //set player config
+int p_x = 1;
+float p_y = 0.0;  //player height -> 150
 int p_height = 150;
 int p_width = 120;
-int p_x = width / 10 + p_width + 1;
-float p_y = 0.0; 
-
 boolean shiftKey = false;
 boolean jump = false;
 int HP = 10;
@@ -19,13 +18,10 @@ boolean m_click = false;
 PImage img;
 PImage ebi;
 PImage kinoko;
-PImage star;
 
 import processing.sound.*;
 SoundFile clickSound;
 SoundFile jumpSound; 
-SoundFile kinokoSound;
-SoundFile damegeSound;
 
 //set time
 float millisec = 0.0;
@@ -48,14 +44,10 @@ void setup() {
     img = loadImage("player.png");  //load player image
     ebi = loadImage("ebi.png");
     kinoko = loadImage("kinoko.png");
-    star = loadImage("star.png");
-
     block = new ArrayList<Block>(); //ヌルぽ対策
 
     clickSound = new SoundFile(this, "click.mp3");
     jumpSound = new SoundFile(this, "jump.mp3");
-    kinokoSound = new SoundFile(this, "kinoko.mp3");
-    damegeSound = new SoundFile(this, "damege.mp3");
 }
 
 void draw() {
