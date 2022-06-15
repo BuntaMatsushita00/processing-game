@@ -16,6 +16,7 @@ int up_count = 0;
 int Frame_Rate = 60;
 boolean m_click = false;
 
+PImage titleImage;
 PImage img;
 PImage ebi;
 PImage kinoko;
@@ -45,7 +46,10 @@ void setup() {
 
     //set player config
     p_y = ((height / 4)*3) - p_height;
-    img = loadImage("player.png");  //load player image
+
+    //load player image
+    titleImage = loadImage("title.png");
+    img = loadImage("player.png");  
     ebi = loadImage("ebi.png");
     kinoko = loadImage("kinoko.png");
     star = loadImage("star.png");

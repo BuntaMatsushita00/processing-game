@@ -1,18 +1,14 @@
 void Title() {
     mouseClicked();
-    background(240);
-    fill(0,0,255);
-    fill(0);
-    textSize(170);
-    text("Title",310,250);
-    textSize(50);
-    text("- - - CLICK TO START - - -",165,500);
+    image(titleImage,0,0);
     if(m_click){
         print("click");
         clickSound.play();
         m_click = false;
         screenNumber = 1;
         start_time = millis();
+        HP = 10;
+        score = 0;
         block.clear();
     }
     

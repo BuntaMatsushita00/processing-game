@@ -9,13 +9,16 @@ void GameOverScreen(){
     fill(255);
 
     textSize(50);
-    text("score:" + str(score), 400 ,400 );
+    text("score:" + str(score), 380 ,400 );
     text("- - - ENTER TO CONTINUE - - -",115,500);
     text("- - - BACKSPACE TO TITLE - - -",115,600);
     if (keyPressed) {
         if (keyCode == ENTER) {
             screenNumber = 1;
+            HP = 10;
+            score = 0;
             start_time = millis();
+            block.clear();
             println("ENTER");
         }else if (keyCode == BACKSPACE) {
             screenNumber = 0;

@@ -37,7 +37,7 @@ void makeBlock() {
             block.get(i).block_x -= 2;
         }
     }
-    if (frameCount % 180 == 0) {
+    if (frameCount % 120 == 0) {
         int ramdom = int(random(9));
         if (ramdom > 2 && ramdom <= 9) {
             if (ramdom % 2 == 0) {

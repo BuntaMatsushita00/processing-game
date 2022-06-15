@@ -6,8 +6,10 @@ void playScreen() {
 
     //set background
     background(0, 229, 255);
-    fill(150, 17, 26);
+    fill(251,231,172);
     rect(0,(height / 4) * 3, width, height / 4);
+    fill(200);
+    rect(0, 0, width / 10, ((height / 4) * 3));
     
     //draw player
     checkShiftKey();
@@ -18,6 +20,7 @@ void playScreen() {
     time();
     Score();
     makeBlock();
+
     fill(255, 0 , 0, 130);
     rect(0, 0, width / 10, ((height / 4) * 3));
     blockHitCheck();
