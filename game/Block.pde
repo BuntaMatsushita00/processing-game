@@ -37,9 +37,9 @@ void makeBlock() {
             block.get(i).block_x -= 2;  //要素のｘ値を変更
         }
     }
-    if (frameCount % 120 == 0) {  //約2秒に1回生成
-        int ramdom = int(random(9));   //ランダムで0-9の数字を生成
-        if (ramdom > 2 && ramdom <= 9) { //3-9 はお邪魔ブロック　　偶数下記数で表示するy値を管理
+    if (frameCount % 60 == 0) {  //約1秒に1回生成
+        int ramdom = int(random(7));   //ランダムで0-7の数字を生成
+        if (ramdom > 2 && ramdom <= 7) { //3-7 はお邪魔ブロック　　偶数下記数で表示するy値を管理
             if (ramdom % 2 == 0) {
                 block.add(new Block(width - block_size,(((height / 4) * 3) - block_size), 3));
             } else {
@@ -59,7 +59,7 @@ void makeBlock() {
 int hitcheck(int p_x, float p_y, int p_width, int p_height,int b_x, int b_y,int b_height, int b_width) {
     ////お邪魔ブロックのどの側面にあるかを判定
     if (HitCheck(p_x, p_y, p_width, p_height, b_x, b_y, b_height, b_width)) {
-        if ((b_x - 20 < p_x + p_width) && (b_x + 4 > p_x + p_width)) {
+        if ((b_x - 20 < p_x + p_width) && (b_x + 10 > p_x + p_width)) {
             return 3; 
         } else if ((b_x + b_width > p_x) && (b_x + 20 < p_x)) {
             return 4; 
@@ -103,11 +103,12 @@ void blockHitCheck() {
             boolean flag = HitCheck(p_x, p_y, p_width, p_height, block.get(i).block_x, block.get(i).block_y, 50,50);
             if (flag) {
                 block.remove(i);
+                starSound.play();
                 score += 100;
             }
         } else {
             int flag = hitcheck(p_x, p_y, p_width, p_height, block.get(i).block_x, block.get(i).block_y, block_size, block_size);
-            ///hitcheck関数に投げて帰ってきた値によって操作をする
+            ///hitcheck関数に投げて返ってきた値によって操作をする
             if (flag == 1 && jump == false) {
                 p_y = block.get(i).block_y - 150;
                 down = false;

@@ -1,8 +1,10 @@
-
 void checkShiftKey() {
     /////shift入力があるか判定
-    textSize(10);
-    text("SHIFT" + str(shiftKey),100,10);
+    if (shiftKey){
+        fill(0);
+        textSize(15);
+        text("DASH MODE",100,15);
+    }
     if (keyPressed) {
         if (key == CODED) {
             if (keyCode == SHIFT) {
@@ -25,21 +27,15 @@ void p_keyPressed() {
                 if (keyCode == UP) {
                     if (up_count <= 0 && p_y > ((height / 4) * 3) - (p_height * 2.5)) {
                         jumpSound.play();
-                        up_count += Frame_Rate * 2;
+                        up_count += Frame_Rate * 3;
                         jump = true;
-                        text("SHIFT UP",10,10);
-                    }
-                    else {
-                        text("jump cool time",10,10);
                     }
                 }
                 else if (keyCode == LEFT) {
-                    p_x = p_x - 4;
-                    text("SHIFT LEFT",10,10);
+                    p_x = p_x - 6;
                 }
                 else if (keyCode == RIGHT) {
-                    p_x = p_x + 4;
-                    text("SHIFT RIGHT",10,10);
+                    p_x = p_x + 6;
                 }  
             } else{
                 if (keyCode == UP) {
@@ -47,19 +43,13 @@ void p_keyPressed() {
                         jumpSound.play();
                         up_count += Frame_Rate * 2;
                         jump = true;
-                        text("UP",10,10);
-                    }
-                    else {
-                        text("jump cool time",10,10);
                     }
                 }
                 else if (keyCode == LEFT) {
-                    p_x = p_x - 6;
-                    text("LEFT",10,10);
+                    p_x = p_x - 4;
                 }
                 else if (keyCode == RIGHT) {
-                    p_x = p_x + 6;
-                    text("RIGHT",10,10);
+                    p_x = p_x + 4;
                 }  
             }
         }
@@ -70,9 +60,7 @@ void p_keyPressed() {
 void drawPlayer() {
     ////プレイヤーを描画する
     ///重力関係
-    if (jump && p_y < ((height / 4) * 3) - (2.2 * p_height) && p_y > ((height / 4) * 3) - (3 * p_height)) {
-        p_y -= 4.0;
-    } else if (jump && p_y > ((height / 4) * 3) - (2.1 * p_height)) {
+    if (jump && p_y > ((height / 4) * 3) - (2.1 * p_height)) {
         p_y -= 4.0;
     } else if (jump && p_y <= ((height / 4) * 3)) {
         jump = false;

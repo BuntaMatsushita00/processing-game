@@ -31,14 +31,14 @@ void playScreen() {
     //描画系　関数たち
     HPdraw();
     damege();
-    if (HP == 0) {
+    if (HP <= 0) {
+        gameoverSound.play();
         screenNumber = 2;
     }
 }
 
 
-float limit_time = 100.0;
-float show_time = 0.0;
+
 void time() {
     //時間を管理
     show_time = limit_time - ((millisec - start_time) / 1000) + 1;
@@ -48,7 +48,9 @@ void time() {
     text(tmp ,900,20);
     if (show_time <= 0.9) {
         screenNumber = 3;
+        clearSound.play();
         millisec = 0.0;
+        frameRate(10);
     } 
 }
 
