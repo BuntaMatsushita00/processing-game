@@ -1,7 +1,7 @@
 void drawBlock() {
     ////ブロックを描画
     if (block.size() != 0) {//中身があるか判定
-        for (int i = 0; i < block.size() - 1; i++) {
+        for (int i = 0; i < block.size(); i++) {
             if (block.get(i).block_style == 0) {   
                 image(ebi, block.get(i).block_x, block.get(i).block_y);
             } else if (block.get(i).block_style == 1) { 
@@ -33,7 +33,7 @@ class Block {
 void makeBlock() {
     ////ブロックを生成
     if (block.size() != 0) {  //中身があるか判定
-        for (int i = 0; i < block.size() - 1; i++) {    
+        for (int i = 0; i < block.size(); i++) {    
             block.get(i).block_x -= 2;  //要素のｘ値を変更
         }
     }
@@ -83,7 +83,7 @@ boolean HitCheck(int p_x, float p_y, int p_width, int p_height, int b_x, int b_y
 
 void blockHitCheck() {
     ////オブジェクトとの判定を管理
-    for (int i = 0; i < block.size() - 1; i++) {
+    for (int i = 0; i < block.size(); i++) {
         if (block.get(i).block_style == 0) {
             boolean flag = HitCheck(p_x, p_y, p_width, p_height, block.get(i).block_x, block.get(i).block_y, 50,50);
             if (flag) {
